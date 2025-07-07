@@ -14,7 +14,7 @@ environment {
         stage('Docker build'){
             steps{
                sh "docker build -t awscicd ." 
-               sh "docker images"
+               sh 'docker images'
             }
         }
     }
