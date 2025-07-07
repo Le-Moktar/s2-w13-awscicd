@@ -1,15 +1,20 @@
 pipeline {
     agent any
 
+environment {
+    BRANCHE_NAME = 'main'
+    GIT_URL = 'https://github.com/Le-Moktar/s2-w13-awscicd.git'
+}
     stages{
         stage('git checkout'){
             steps{
-                git branch: 'main', url: 'https://github.com/Le-Moktar/s2-w13-awscicd.git'
+                git branch: "${BRANCHE_NAME}", url: "${GIT_URL}"
             }
         }
-        stage('test '){
+        stage('Docker build'){
             steps{
-               sh "echo test" 
+               sh "docker build -t awscicd ." 
+               sh "docker images"
             }
         }
     }
