@@ -5,7 +5,7 @@ environment {
     BRANCHE_NAME = 'main'
     GIT_URL = 'https://github.com/Le-Moktar/s2-w13-awscicd.git'
     IMAGE_TAG = 'moktar/awscicd'
-    IMAGE_VERSION = '${BUILD_ID}'
+    IMAGE_VERSION = '${BUILD_NUMBER}'
 }
     stages{
         stage('git checkout'){
